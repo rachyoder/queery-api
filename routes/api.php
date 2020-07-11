@@ -20,3 +20,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 Route::post('register', 'AuthController@register');
 Route::post('login', 'AuthController@login');
+Route::get('/index', 'ArticleController@index');
+
+Route::get('/test/env', function () {
+    dd(env('DB_DATABASE')); // dump db variable value one by one
+});
