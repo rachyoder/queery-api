@@ -45,4 +45,13 @@ class AuthController extends BaseController
             return $this->sendError('Unauthorised.', ['error' => 'Unauthorised']);
         }
     }
+
+    public function logout(Request $request)
+    {
+        $request->user()->token()->revoke();
+        $request->user()->token()->delete();
+
+        $response = 'You have successfully logged out!';
+        return response($response, 200);
+    }
 }
