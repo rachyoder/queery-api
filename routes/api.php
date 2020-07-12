@@ -18,10 +18,6 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
-Route::post('register', 'AuthController@register');
-Route::post('login', 'AuthController@login');
+Route::post('register', 'API\AuthController@register');
+Route::post('login', 'API\AuthController@login');
 Route::get('/index', 'ArticleController@index');
-
-Route::get('/test/env', function () {
-    dd(env('DB_DATABASE')); // dump db variable value one by one
-});
