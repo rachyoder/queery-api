@@ -18,7 +18,8 @@ use Illuminate\Support\Facades\Route;
 Route::post('register', 'API\AuthController@register');
 Route::post('login', 'API\AuthController@login');
 Route::get('/index', 'ArticleController@index');
+Route::post('/titlesearch', 'SearchController@titleSearch');
 
 Route::middleware('auth:api')->group(function () {
-    Route::get('/logout', 'API/AuthController@logout');
+    Route::get('/logout', 'API\AuthController@logout');
 });
