@@ -44,9 +44,11 @@ class ArticleController extends Controller
      * @param  \App\article  $article
      * @return \Illuminate\Http\Response
      */
-    public function show(article $article)
+    public function show(article $article_id)
     {
-        //
+        $article = Article::find($article_id)->first();
+        $article->users;
+        return response($article, 200);
     }
 
     /**
