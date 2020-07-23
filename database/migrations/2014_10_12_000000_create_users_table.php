@@ -22,6 +22,13 @@ class CreateUsersTable extends Migration
             $table->rememberToken();
             $table->timestamps();
         });
+
+        Schema::create('roles_users', function (Blueprint $table) {
+            $table->id();
+            $table->foreignId('role_id');
+            $table->foreignId('user_id');
+
+        });
     }
 
     /**
