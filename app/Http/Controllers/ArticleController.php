@@ -35,7 +35,13 @@ class ArticleController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $article = new Article();
+        $article->title = $request->get('title');
+        $article->desc = $request->get('desc');
+        $article->body = $request->get('body');
+        $article->save();
+
+        return response()->json('Article saved!');
     }
 
     /**

@@ -15,9 +15,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::post('register', 'API\AuthController@register');
-Route::post('login', 'API\AuthController@login');
+Route::post('/register', 'API\AuthController@register');
+Route::post('/login', 'API\AuthController@login');
 Route::post('/titlesearch', 'SearchController@titleSearch');
+Route::post('/article/new', 'ArticleController@store');
 
 Route::get('/index', 'ArticleController@index');
 Route::get('/article/{article_id}', 'ArticleController@show');
